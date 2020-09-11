@@ -84,23 +84,9 @@ END;
 
 
 -------------------------------------------------------------------------------------------------------
-exec add_customer('Brad','Bingham','email@emial.com','brad1','pass1');
-select * from customers;
-insert into purchase(customerID, date_loaded) 
-    values(1,CURRENT_TIMESTAMP);
-select * from purchase;
-insert into item(product, price) values ('apple',.56);
-select * from item;
-insert into purchased_items values(3,3,3);
-update purchased_items set quantity = 2 where (purchaseID=3 and itemID=2);
-    
-
-    
-SELECT *
-FROM purchase
-INNER JOIN customer ON purchase.customerid = customer.id;
-
-SELECT SUM(quantity) AS total_items, SUM(quantity * price) AS total_price, COUNT(*) AS unique_items
-FROM purchased_items
-INNER JOIN item ON itemid = id;
+--need to make
+--function
+--something that uses cursors
+--trigger
+--%TYPE attribute
 
