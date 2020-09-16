@@ -37,8 +37,8 @@ CREATE TABLE login_info(
 
 --purchase, item and purchasedItems to demonstrate one-to-many and many-to-many relationship
 CREATE TABLE purchase(
-    id NUMBER GENERATED AS IDENTITY PRIMARY KEY,
-    customerID REFERENCES customer(id) ON DELETE SET NULL,
+    id number GENERATED AS IDENTITY PRIMARY KEY,
+    customerID number REFERENCES customer(id) ON DELETE SET NULL,
     date_loaded TIMESTAMP(2) WITH TIME ZONE 
 );
 CREATE TABLE item(
@@ -65,7 +65,7 @@ AS
     SELECT * 
     FROM purchased_items 
     INNER JOIN item 
-    ON purchaseID = purchased_items.itemid;
+    ON itemID = purchased_items.itemid;
 
 CREATE OR REPLACE VIEW purchases
 AS
